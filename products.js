@@ -35,6 +35,7 @@ function setupShopSearch(){
       if(show)n++;
     });
     if(status)status.textContent=q?`${n} result${n===1?"":"s"} found`:"";
+    if(clear)clear.hidden=!q;
   };
   input.addEventListener("input",run);
   clear?.addEventListener("click",()=>{input.value="";run();input.focus();});

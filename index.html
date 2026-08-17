@@ -18,9 +18,12 @@
   <button class="cart-button" id="cartButton">Bag <span id="cartCount">0</span></button>
 </header>
 <div class="shop-search">
-<label for="siteSearch">Search the shop</label>
-<div class="search-box"><input id="siteSearch" type="search" placeholder="Search comics, posters, characters, publishers..." autocomplete="off"><button id="clearSearch" type="button">Clear</button></div>
-<p id="searchStatus" class="search-status" aria-live="polite"></p>
+  <div class="search-inner">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+    <input id="siteSearch" type="search" placeholder="Search comics, posters, characters, publishers..." autocomplete="off" aria-label="Search the shop">
+    <button id="clearSearch" class="search-clear" type="button" aria-label="Clear search" hidden>×</button>
+  </div>
+  <p id="searchStatus" class="search-status" aria-live="polite"></p>
 </div>
 
 <main id="home">

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product | Comic Reel & Retro</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.product-page{max-width:1100px;margin:auto;padding:80px 8%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.product-large{min-height:560px;background:#292d33;color:#fff;display:grid;place-items:center;text-align:center;font:3rem 'Archivo Black',Impact,sans-serif}
+.details h1{font-size:clamp(2.8rem,5vw,5rem)}
+.details .meta{color:#77716a;margin:15px 0 25px}
+.details .price{font-size:1.5rem}
+.details dl{margin:30px 0;border-top:1px solid #ddd7cc}
+.details dt,.details dd{padding:10px 0;border-bottom:1px solid #ddd7cc}
+.details dt{font-weight:800;font-size:.75rem;text-transform:uppercase}
+.details dd{color:#666}
+.back{display:inline-block;margin-bottom:25px;font-weight:800;font-size:.75rem;text-transform:uppercase}
+@media(max-width:700px){.product-page{grid-template-columns:1fr;padding:55px 6%}.product-large{min-height:420px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<a class="logo" href="index.html">COMIC <span>REEL</span> & RETRO</a>
+<nav><a href="index.html#comics">Comics</a><a href="index.html#posters">Posters</a><a href="index.html#about">About</a></nav>
+</header>
+<main class="product-page">
+<div>
+<a class="back" href="javascript:history.back()">← Back</a>
+<div class="product-large" id="image">PRODUCT</div>
+</div>
+<section class="details">
+<p class="eyebrow" id="type">PRODUCT</p>
+<h1 id="name">Product</h1>
+<p class="meta" id="meta">Details coming soon</p>
+<strong class="price" id="price">£—</strong>
+<dl>
+<dt>Publisher / Brand</dt><dd id="publisher">—</dd>
+<dt>Year</dt><dd id="year">—</dd>
+<dt>Condition / Size</dt><dd id="condition">—</dd>
+<dt>Stock</dt><dd id="stock">—</dd>
+</dl>
+<p id="description">Full product description will appear here when this item is added to stock.</p>
+</section>
+</main>
+<footer><strong>COMIC <span>REEL</span> & RETRO</strong><small>© 2026 Comic Reel & Retro</small></footer>
+<script src="products.js"></script>
+</body>
+</html>
