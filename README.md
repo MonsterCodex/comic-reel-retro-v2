@@ -1,32 +1,10 @@
-# Comic Reel & Retro — V2
+# Comic Reel & Retro — Product Page
 
-A GitHub Pages-ready static shop for Comic Reel & Retro.
+Reusable product-page system for comics and posters.
 
-## Current build
-- Posters section
-- Comics section
-- Product cards
-- Prices
-- Add-to-bag functionality
-- Persistent bag using localStorage
-- Responsive mobile design
-- About section
-- Placeholder product data ready to replace with real stock
+Open examples:
+- product.html?id=1
+- product.html?id=2
+- product.html?id=101
 
-## Folder structure
-- index.html
-- style.css
-- script.js
-- images/posters/
-- images/comics/
-
-## Next
-Replace placeholder products with real stock, add actual product images, create individual product pages, then connect checkout and the IONOS domain.
-
-
-## Categories
-Comics: Marvel, DC, 2000 AD, British Comics, Independent, Manga, Other. Posters: Movies, TV, Horror, Gaming, Superheroes, Sci-Fi, Other. Lightweight client-side filters are included.
-
-
-## Search + New Arrivals
-Lightweight client-side shop search and a New Arrivals section ready for delivered stock. No real stock is shown until inventory is added.
+Real stock details and photographs can replace the placeholders when the delivery arrives.
