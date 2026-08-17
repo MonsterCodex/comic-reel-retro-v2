@@ -15,3 +15,14 @@ footer{background:var(--black);color:#fff;padding:35px 8vw;display:flex;justify-
 @media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr;padding:65px 6vw}.hero-display{height:390px}.intro-strip{grid-template-columns:1fr}.intro-strip div{padding:17px 6vw}.section,.feature{padding:75px 6vw}.section-head{display:block}.section-head>p{margin-top:15px}.products{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}.vault-box{margin-top:60px}}
 @media(max-width:520px){h1{font-size:3.8rem}.hero-display{transform:scale(.8);transform-origin:center}.products{grid-template-columns:1fr}.product-image{height:320px}footer{display:block}footer p{margin-top:8px}}
 .category-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:-12px 0 28px}.category-tabs button{border:1px solid #111;background:#fff;padding:9px 13px;font:700 .68rem Inter,Arial,sans-serif;text-transform:uppercase;cursor:pointer}.category-tabs button:hover,.category-tabs button.active{background:#111;color:#fff}@media(max-width:520px){.category-tabs{gap:6px}.category-tabs button{font-size:.62rem;padding:8px 10px}}
+.shop-search{background:#fffdf8;border-bottom:1px solid #ddd7cc;padding:18px 8%;position:relative;z-index:2}
+.shop-search label{display:block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.search-box{display:flex;max-width:900px;border:2px solid #111;background:#fff}
+.search-box input{width:100%;border:0;outline:0;padding:13px 14px;font:500 .9rem Inter,Arial,sans-serif;background:transparent}
+.search-box button{border:0;border-left:1px solid #ddd7cc;background:#f5f2eb;padding:0 15px;font:700 .68rem Inter,Arial,sans-serif;text-transform:uppercase;cursor:pointer}
+.search-box button:hover{background:#111;color:#fff}
+.search-status{font-size:.7rem;color:#77716a;margin-top:7px;min-height:1em}
+.arrivals{background:#f5f2eb}
+.arrivals-empty{border:2px dashed #bbb2a4;background:#fffdf8;padding:35px;text-align:center;color:#77716a;font-weight:600}
+.product[hidden]{display:none!important}
+@media(max-width:520px){.shop-search{padding:15px 6%}.search-box input{font-size:.8rem}.search-box button{padding:0 11px}}

@@ -17,3 +17,27 @@ function card(p){const cls=p.type==="comic"?"comic-image":"poster-image",label=p
 function render(type,filter="all"){const target=document.getElementById(type==="comic"?"comicProducts":"posterProducts");target.innerHTML=products.filter(p=>p.type===type&&(filter==="all"||p.category===filter)).map(card).join("")}
 render("comic");render("poster");
 document.querySelectorAll(".category-tabs").forEach(t=>t.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;t.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(t.dataset.target==="comicProducts"?"comic":"poster",b.dataset.filter)}));
+function renderNewArrivals(){
+  const target=document.getElementById("newArrivalProducts");
+  if(target) target.innerHTML='<div class="arrivals-empty">Your first arrivals will appear here when stock is ready.</div>';
+}
+function setupShopSearch(){
+  const input=document.getElementById("siteSearch");
+  const clear=document.getElementById("clearSearch");
+  const status=document.getElementById("searchStatus");
+  if(!input)return;
+  const run=()=>{
+    const q=input.value.trim().toLowerCase();
+    let n=0;
+    document.querySelectorAll(".product").forEach(card=>{
+      const show=!q||card.textContent.toLowerCase().includes(q);
+      card.hidden=!show;
+      if(show)n++;
+    });
+    if(status)status.textContent=q?`${n} result${n===1?"":"s"} found`:"";
+  };
+  input.addEventListener("input",run);
+  clear?.addEventListener("click",()=>{input.value="";run();input.focus();});
+}
+renderNewArrivals();
+setupShopSearch();

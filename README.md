@@ -26,3 +26,7 @@ Replace placeholder products with real stock, add actual product images, create 
 
 ## Categories
 Comics: Marvel, DC, 2000 AD, British Comics, Independent, Manga, Other. Posters: Movies, TV, Horror, Gaming, Superheroes, Sci-Fi, Other. Lightweight client-side filters are included.
+
+
+## Search + New Arrivals
+Lightweight client-side shop search and a New Arrivals section ready for delivered stock. No real stock is shown until inventory is added.

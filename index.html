@@ -17,6 +17,11 @@
   </nav>
   <button class="cart-button" id="cartButton">Bag <span id="cartCount">0</span></button>
 </header>
+<div class="shop-search">
+<label for="siteSearch">Search the shop</label>
+<div class="search-box"><input id="siteSearch" type="search" placeholder="Search comics, posters, characters, publishers..." autocomplete="off"><button id="clearSearch" type="button">Clear</button></div>
+<p id="searchStatus" class="search-status" aria-live="polite"></p>
+</div>
 
 <main id="home">
 <section class="hero">
@@ -41,6 +46,10 @@
   <div><b>03</b> COLLECTIBLES — COMING SOON</div>
 </section>
 
+<section class="section arrivals" id="new-arrivals">
+<div class="section-head"><div><p class="eyebrow">NEW STOCK</p><h2>NEW ARRIVALS</h2></div><p>Fresh stock will appear here as your deliveries arrive.</p></div>
+<div class="products" id="newArrivalProducts"></div>
+</section>
 <section class="section" id="comics">
   <div class="section-head">
     <div><p class="eyebrow">01 / COMIC VAULT</p><h2>Comics for<br><em>collectors.</em></h2></div>
