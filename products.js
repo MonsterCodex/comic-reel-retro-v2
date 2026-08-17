@@ -3,7 +3,7 @@ const products=[
 {id:2,type:"comic",category:"DC",name:"Comic Find #002",meta:"DC • Year TBC • Condition TBC",price:"£—"},
 {id:3,type:"comic",category:"2000AD",name:"Comic Find #003",meta:"2000 AD • Year TBC • Condition TBC",price:"£—"},
 {id:4,type:"comic",category:"British",name:"Comic Find #004",meta:"British Comics • Year TBC • Condition TBC",price:"£—"},
-{id:5,type:"comic",category:"Independent",name:"Comic Find #005",meta:"Independent • Year TBC • Condition TBC",price:"£—"},
+{id:5,type:"comic",category:"Indie",name:"Comic Find #005",meta:"Indie • Year TBC • Condition TBC",price:"£—"},
 {id:6,type:"comic",category:"Manga",name:"Comic Find #006",meta:"Manga • Year TBC • Condition TBC",price:"£—"},
 {id:7,type:"comic",category:"Other",name:"Comic Find #007",meta:"Other • Year TBC • Condition TBC",price:"£—"},
 {id:101,type:"poster",category:"Movies",name:"Movie Poster #001",meta:"Movies • Licensed • Size TBC",price:"£—"},
