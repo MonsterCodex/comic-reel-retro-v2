@@ -17,101 +17,172 @@ const products = [
 
 let cart = JSON.parse(localStorage.getItem("crrCart") || "[]");
 
-function card(p){
-  const label=p.type==="comic"?"COMIC":"POSTER";
-  const cls=p.type==="comic"?"comic-image":"poster-image";
-  return `<article class="product" data-category="${p.category}">
-    <div class="product-image ${cls}">${label}<br>#${String(p.id).padStart(3,"0")}</div>
-    <div class="product-info"><h3>${p.name}</h3><p>${p.meta}</p>
-    <div class="price-row"><span class="price">£${p.price.toFixed(2)}</span><button class="add" onclick="addToCart(${p.id})">ADD</button></div></div>
-  </article>`;
+function card(p) {
+  const label = p.type === "comic" ? "COMIC" : "POSTER";
+  const cls = p.type === "comic" ? "comic-image" : "poster-image";
+
+  return `
+    <article class="product">
+      <a class="product-link" href="product.html?id=${p.id}" aria-label="View ${p.name}">
+        <div class="product-image ${cls}">
+          ${label}<br>#${String(p.id).padStart(3, "0")}
+        </div>
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p>${p.meta}</p>
+          <div class="price-row">
+            <span class="price">£${p.price.toFixed(2)}</span>
+            <span class="add">VIEW</span>
+          </div>
+        </div>
+      </a>
+      <button class="quick-add" onclick="addToCart(${p.id})">ADD TO BAG</button>
+    </article>
+  `;
 }
 
-function renderProducts(type, category="all"){
-  const target=document.getElementById(type==="comic"?"comicProducts":"posterProducts");
-  if(!target)return;
-  target.innerHTML=products
-    .filter(p=>p.type===type && (category==="all" || p.category===category))
-    .map(card).join("");
+function renderProducts(type, category = "all") {
+  const target = document.getElementById(
+    type === "comic" ? "comicProducts" : "posterProducts"
+  );
+
+  if (!target) return;
+
+  target.innerHTML = products
+    .filter(p => p.type === type && (category === "all" || p.category === category))
+    .map(card)
+    .join("");
 }
 
-function scrollToResults(targetId){
-  const target=document.getElementById(targetId);
-  if(!target)return;
-  const offset=115;
-  const top=target.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({top,behavior:"smooth"});
+function scrollToResults(targetId) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  const top =
+    target.getBoundingClientRect().top + window.scrollY - 115;
+
+  window.scrollTo({
+    top,
+    behavior: "smooth"
+  });
 }
 
-function setupCategoryTabs(){
-  document.querySelectorAll(".category-tabs").forEach(tabs=>{
-    tabs.addEventListener("click",event=>{
-      const button=event.target.closest("button[data-filter]");
-      if(!button)return;
+function setupCategoryTabs() {
+  document.querySelectorAll(".category-tabs").forEach(tabs => {
+    tabs.addEventListener("click", event => {
+      const button = event.target.closest("button[data-filter]");
+      if (!button) return;
 
-      tabs.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+      tabs.querySelectorAll("button").forEach(b =>
+        b.classList.remove("active")
+      );
+
       button.classList.add("active");
 
-      const targetId=tabs.dataset.target;
-      const type=targetId==="comicProducts"?"comic":"poster";
-      renderProducts(type,button.dataset.filter);
+      const targetId = tabs.dataset.target;
+      const type = targetId === "comicProducts" ? "comic" : "poster";
 
-      // Take the customer straight to the filtered results.
-      requestAnimationFrame(()=>scrollToResults(targetId));
+      renderProducts(type, button.dataset.filter);
+
+      requestAnimationFrame(() => scrollToResults(targetId));
     });
   });
 }
 
-function renderNewArrivals(){
-  const target=document.getElementById("newArrivalProducts");
-  if(target)target.innerHTML='<div class="arrivals-empty">Your first arrivals will appear here when stock is ready.</div>';
+function renderNewArrivals() {
+  const target = document.getElementById("newArrivalProducts");
+
+  if (target) {
+    target.innerHTML =
+      '<div class="arrivals-empty">Your first arrivals will appear here when stock is ready.</div>';
+  }
 }
 
-function setupSearch(){
-  const input=document.getElementById("siteSearch");
-  const clear=document.getElementById("clearSearch");
-  const status=document.getElementById("searchStatus");
-  if(!input)return;
+function setupSearch() {
+  const input = document.getElementById("siteSearch");
+  const clear = document.getElementById("clearSearch");
+  const status = document.getElementById("searchStatus");
 
-  const run=()=>{
-    const q=input.value.trim().toLowerCase();
-    let n=0;
-    document.querySelectorAll(".product").forEach(card=>{
-      const show=!q || card.textContent.toLowerCase().includes(q);
-      card.hidden=!show;
-      if(show)n++;
+  if (!input) return;
+
+  const run = () => {
+    const query = input.value.trim().toLowerCase();
+    let matches = 0;
+
+    document.querySelectorAll(".product").forEach(product => {
+      const show =
+        !query ||
+        product.textContent.toLowerCase().includes(query);
+
+      product.hidden = !show;
+
+      if (show) matches++;
     });
-    if(status)status.textContent=q?`${n} result${n===1?"":"s"} found`:"";
-    if(clear)clear.hidden=!q;
+
+    if (status) {
+      status.textContent = query
+        ? `${matches} result${matches === 1 ? "" : "s"} found`
+        : "";
+    }
+
+    if (clear) clear.hidden = !query;
   };
 
-  input.addEventListener("input",run);
-  clear?.addEventListener("click",()=>{input.value="";run();input.focus();});
+  input.addEventListener("input", run);
+
+  clear?.addEventListener("click", () => {
+    input.value = "";
+    run();
+    input.focus();
+  });
 }
 
-function saveCart(){
-  localStorage.setItem("crrCart",JSON.stringify(cart));
+function saveCart() {
+  localStorage.setItem("crrCart", JSON.stringify(cart));
   renderCart();
 }
-function addToCart(id){
-  const p=products.find(x=>x.id===id);
-  if(!p)return;
-  cart.push(p);
+
+function addToCart(id) {
+  const product = products.find(item => item.id === id);
+
+  if (!product) return;
+
+  cart.push(product);
   saveCart();
+
   document.getElementById("cartPanel")?.classList.add("open");
   document.getElementById("overlay")?.classList.add("open");
 }
-function removeFromCart(index){cart.splice(index,1);saveCart();}
-function renderCart(){
-  const count=document.getElementById("cartCount");
-  const items=document.getElementById("cartItems");
-  const total=document.getElementById("cartTotal");
-  if(!count||!items||!total)return;
-  count.textContent=cart.length;
-  items.innerHTML=cart.length
-    ?cart.map((p,i)=>`<div class="cart-item"><div><h4>${p.name}</h4><small>£${p.price.toFixed(2)}</small></div><button onclick="removeFromCart(${i})">Remove</button></div>`).join("")
-    :'<div class="empty">Your bag is empty.</div>';
-  total.textContent="£"+cart.reduce((sum,p)=>sum+p.price,0).toFixed(2);
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  saveCart();
+}
+
+function renderCart() {
+  const count = document.getElementById("cartCount");
+  const items = document.getElementById("cartItems");
+  const total = document.getElementById("cartTotal");
+
+  if (!count || !items || !total) return;
+
+  count.textContent = cart.length;
+
+  items.innerHTML = cart.length
+    ? cart.map((p, index) => `
+        <div class="cart-item">
+          <div>
+            <h4>${p.name}</h4>
+            <small>£${p.price.toFixed(2)}</small>
+          </div>
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `).join("")
+    : '<div class="empty">Your bag is empty.</div>';
+
+  total.textContent =
+    "£" +
+    cart.reduce((sum, p) => sum + p.price, 0).toFixed(2);
 }
 
 renderProducts("comic");
@@ -121,18 +192,21 @@ renderNewArrivals();
 setupSearch();
 renderCart();
 
-document.getElementById("cartButton")?.addEventListener("click",()=>{
+document.getElementById("cartButton")?.addEventListener("click", () => {
   document.getElementById("cartPanel")?.classList.add("open");
   document.getElementById("overlay")?.classList.add("open");
 });
-document.getElementById("closeCart")?.addEventListener("click",()=>{
+
+document.getElementById("closeCart")?.addEventListener("click", () => {
   document.getElementById("cartPanel")?.classList.remove("open");
   document.getElementById("overlay")?.classList.remove("open");
 });
-document.getElementById("overlay")?.addEventListener("click",()=>{
+
+document.getElementById("overlay")?.addEventListener("click", () => {
   document.getElementById("cartPanel")?.classList.remove("open");
   document.getElementById("overlay")?.classList.remove("open");
 });
-document.getElementById("checkout")?.addEventListener("click",()=>{
-  alert("Checkout will be connected after we choose the selling/payment platform.");
+
+document.getElementById("checkout")?.addEventListener("click", () => {
+  alert("Checkout will be connected after the payment platform is chosen.");
 });
