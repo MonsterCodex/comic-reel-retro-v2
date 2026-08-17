@@ -35,15 +35,29 @@ function renderProducts(type, category="all"){
     .map(card).join("");
 }
 
+function scrollToResults(targetId){
+  const target=document.getElementById(targetId);
+  if(!target)return;
+  const offset=115;
+  const top=target.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({top,behavior:"smooth"});
+}
+
 function setupCategoryTabs(){
   document.querySelectorAll(".category-tabs").forEach(tabs=>{
     tabs.addEventListener("click",event=>{
       const button=event.target.closest("button[data-filter]");
       if(!button)return;
+
       tabs.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
       button.classList.add("active");
-      const type=tabs.dataset.target==="comicProducts"?"comic":"poster";
+
+      const targetId=tabs.dataset.target;
+      const type=targetId==="comicProducts"?"comic":"poster";
       renderProducts(type,button.dataset.filter);
+
+      // Take the customer straight to the filtered results.
+      requestAnimationFrame(()=>scrollToResults(targetId));
     });
   });
 }
@@ -58,6 +72,7 @@ function setupSearch(){
   const clear=document.getElementById("clearSearch");
   const status=document.getElementById("searchStatus");
   if(!input)return;
+
   const run=()=>{
     const q=input.value.trim().toLowerCase();
     let n=0;
@@ -69,6 +84,7 @@ function setupSearch(){
     if(status)status.textContent=q?`${n} result${n===1?"":"s"} found`:"";
     if(clear)clear.hidden=!q;
   };
+
   input.addEventListener("input",run);
   clear?.addEventListener("click",()=>{input.value="";run();input.focus();});
 }
@@ -92,7 +108,9 @@ function renderCart(){
   const total=document.getElementById("cartTotal");
   if(!count||!items||!total)return;
   count.textContent=cart.length;
-  items.innerHTML=cart.length?cart.map((p,i)=>`<div class="cart-item"><div><h4>${p.name}</h4><small>£${p.price.toFixed(2)}</small></div><button onclick="removeFromCart(${i})">Remove</button></div>`).join(""):'<div class="empty">Your bag is empty.</div>';
+  items.innerHTML=cart.length
+    ?cart.map((p,i)=>`<div class="cart-item"><div><h4>${p.name}</h4><small>£${p.price.toFixed(2)}</small></div><button onclick="removeFromCart(${i})">Remove</button></div>`).join("")
+    :'<div class="empty">Your bag is empty.</div>';
   total.textContent="£"+cart.reduce((sum,p)=>sum+p.price,0).toFixed(2);
 }
 
@@ -103,7 +121,18 @@ renderNewArrivals();
 setupSearch();
 renderCart();
 
-document.getElementById("cartButton")?.addEventListener("click",()=>{document.getElementById("cartPanel")?.classList.add("open");document.getElementById("overlay")?.classList.add("open");});
-document.getElementById("closeCart")?.addEventListener("click",()=>{document.getElementById("cartPanel")?.classList.remove("open");document.getElementById("overlay")?.classList.remove("open");});
-document.getElementById("overlay")?.addEventListener("click",()=>{document.getElementById("cartPanel")?.classList.remove("open");document.getElementById("overlay")?.classList.remove("open");});
-document.getElementById("checkout")?.addEventListener("click",()=>alert("Checkout will be connected after we choose the selling/payment platform."));
+document.getElementById("cartButton")?.addEventListener("click",()=>{
+  document.getElementById("cartPanel")?.classList.add("open");
+  document.getElementById("overlay")?.classList.add("open");
+});
+document.getElementById("closeCart")?.addEventListener("click",()=>{
+  document.getElementById("cartPanel")?.classList.remove("open");
+  document.getElementById("overlay")?.classList.remove("open");
+});
+document.getElementById("overlay")?.addEventListener("click",()=>{
+  document.getElementById("cartPanel")?.classList.remove("open");
+  document.getElementById("overlay")?.classList.remove("open");
+});
+document.getElementById("checkout")?.addEventListener("click",()=>{
+  alert("Checkout will be connected after we choose the selling/payment platform.");
+});

@@ -43,3 +43,26 @@ footer{background:var(--black);color:#fff;padding:35px 8vw;display:flex;justify-
 .search-inner input{height:42px;font-size:.8rem}
 .search-icon{font-size:1.3rem}
 }
+
+/* Category navigation stays accessible while browsing */
+.category-tabs {
+  position: sticky;
+  top: 70px;
+  z-index: 5;
+  background: #fffdf8;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd7cc;
+}
+
+@media (max-width: 520px) {
+  .category-tabs {
+    top: 64px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 9px 0;
+  }
+
+  .category-tabs button {
+    flex: 0 0 auto;
+  }
+}
