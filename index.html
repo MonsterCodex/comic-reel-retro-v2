@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Comic Reel & Retro — comics, posters and pop culture collectibles.">
+<title>Comic Reel & Retro | Comics & Posters</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a href="#home" class="logo">COMIC <span>REEL</span> & RETRO</a>
+  <nav>
+    <a href="#comics">Comics</a>
+    <a href="#posters">Posters</a>
+    <a href="#about">About</a>
+  </nav>
+  <button class="cart-button" id="cartButton">Bag <span id="cartCount">0</span></button>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">COMICS • POSTERS • POP CULTURE</p>
+    <h1>FIND YOUR<br><em>NEXT</em> OBSESSION.</h1>
+    <p>Comic Reel & Retro brings together comic books, movie posters and nostalgic finds for fans, readers and collectors.</p>
+    <div class="hero-buttons">
+      <a href="#comics" class="btn dark">Shop Comics</a>
+      <a href="#posters" class="btn light">Shop Posters</a>
+    </div>
+  </div>
+  <div class="hero-display">
+    <div class="display-poster"><small>THE POSTER WALL</small><strong>MOVIE<br>LEGENDS</strong><span>COLLECT • DISPLAY • REPEAT</span></div>
+    <div class="display-comic"><small>THE COMIC VAULT</small><strong>#001</strong><span>NEW FIND</span></div>
+  </div>
+</section>
+
+<section class="intro-strip">
+  <div><b>01</b> COMICS</div>
+  <div><b>02</b> POSTERS</div>
+  <div><b>03</b> COLLECTIBLES — COMING SOON</div>
+</section>
+
+<section class="section" id="comics">
+  <div class="section-head">
+    <div><p class="eyebrow">01 / COMIC VAULT</p><h2>Comics for<br><em>collectors.</em></h2></div>
+    <p>Every comic will have its own listing with issue number, publisher, year, condition and price.</p>
+  </div>
+  <div class="products" id="comicProducts"></div>
+</section>
+
+<section class="feature">
+  <div>
+    <p class="eyebrow">THE HUNT</p>
+    <h2>OLD ISSUES.<br>NEW STORIES.</h2>
+    <p>We're hunting down interesting issues, affordable reader copies and collector pieces. The vault grows every time we find something worth keeping.</p>
+    <a href="#comics" class="btn light">Enter the Vault</a>
+  </div>
+  <div class="vault-box">CR<br><small>COMIC REEL<br>& RETRO</small></div>
+</section>
+
+<section class="section" id="posters">
+  <div class="section-head">
+    <div><p class="eyebrow">02 / POSTER WALL</p><h2>Bring the<br><em>screen home.</em></h2></div>
+    <p>Movie, TV, horror, gaming and pop-culture posters from licensed suppliers and selected stock.</p>
+  </div>
+  <div class="products" id="posterProducts"></div>
+</section>
+
+<section class="about" id="about">
+  <p class="eyebrow">ABOUT COMIC REEL & RETRO</p>
+  <h2>For people who<br><em>still love the hunt.</em></h2>
+  <p>We're building a UK-focused pop-culture shop around comics, posters and the things that make collecting fun. More categories will follow as the collection grows.</p>
+</section>
+</main>
+
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-top"><h3>Your bag</h3><button id="closeCart">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-bottom"><div><span>Total</span><strong id="cartTotal">£0.00</strong></div><button class="btn dark" id="checkout">Checkout</button><p class="tiny">Checkout will be connected to your chosen payment platform later.</p></div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<footer>
+  <div class="logo">COMIC <span>REEL</span> & RETRO</div>
+  <p>Posters • Comics • Pop Culture</p>
+  <p>hello@comicreelretro.co.uk</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
