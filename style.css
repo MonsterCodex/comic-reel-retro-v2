@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   1. VARIABLES & RESET
+   ========================================================= */
+
+:root {
+  --black: #101010;
+  --paper: #f1ede5;
+  --white: #fffaf1;
+  --red: #d84b2f;
+  --gold: #cda33b;
+  --muted: #746f68;
+  --line: #d4cec4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--black);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================================================
+   2. HEADER & NAVIGATION
+   ========================================================= */
+
+.header {
+  height: 76px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+}
+
+.logo {
+  font: 1.05rem 'Archivo Black', Impact, sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.cart-button {
+  border: 0;
+  background: var(--black);
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.cart-button span {
+  color: #f2c45d;
+  margin-left: 7px;
+}
+
+
+/* =========================================================
+   3. SEARCH
+   ========================================================= */
+
+.shop-search {
+  background: #fffdf8;
+  border-bottom: 1px solid #ddd7cc;
+  padding: 8px 6%;
+  position: relative;
+  z-index: 2;
+}
+
+.search-inner {
+  max-width: 550px;
+  height: 38px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #f5f2eb;
+  border: 1px solid #cfc7ba;
+  border-radius: 999px;
+  padding: 0 12px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.search-inner:focus-within {
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+}
+
+.search-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #77716a;
+  transform: rotate(-20deg);
+  display: block;
+}
+
+.search-inner input {
+  width: 100%;
+  height: 34px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #111;
+  font: 400 0.78rem Inter, Arial, sans-serif;
+}
+
+.search-inner input::placeholder {
+  color: #77716a;
+}
+
+.search-clear {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: #ddd7cc;
+  color: #111;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.search-clear:hover {
+  background: #111;
+  color: #fff;
+}
+
+.search-status {
+  text-align: center;
+  font-size: 0.68rem;
+  color: #77716a;
+  margin: 5px 0 0;
+  min-height: 1em;
+}
+
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+
+.hero {
+  min-height: 670px;
+  background: var(--white);
+  padding: 90px 8vw;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 0.69rem;
+  letter-spacing: 0.17em;
+  font-weight: 800;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Archivo Black', Impact, sans-serif;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+h1 {
+  font-size: clamp(4rem, 8vw, 8.5rem);
+}
+
+h1 em,
+h2 em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.hero-copy > p:not(.eyebrow) {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 590px;
+  margin: 27px 0 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  border: 1px solid var(--black);
+  padding: 13px 18px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.73rem;
+  cursor: pointer;
+}
+
+.btn.dark {
+  background: var(--black);
+  color: #fff;
+}
+
+.btn.light {
+  background: #fff;
+  color: var(--black);
+}
+
+
+/* =========================================================
+   5. HERO DISPLAY
+   ========================================================= */
+
+.hero-display {
+  height: 470px;
+  position: relative;
+}
+
+.display-poster,
+.display-comic {
+  position: absolute;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Archivo Black';
+}
+
+.display-poster {
+  height: 390px;
+  width: 270px;
+  right: 18%;
+  top: 15px;
+  background: #314e5b;
+  color: #fff;
+  transform: rotate(-6deg);
+  box-shadow: 12px 12px 0 var(--red);
+}
+
+.display-poster strong {
+  font-size: 3rem;
+  line-height: 0.85;
+}
+
+.display-comic {
+  height: 320px;
+  width: 215px;
+  right: 0;
+  bottom: 0;
+  background: var(--gold);
+  color: var(--black);
+  transform: rotate(8deg);
+  box-shadow: 10px 10px 0 var(--black);
+}
+
+.display-comic strong {
+  font-size: 4rem;
+}
+
+.display-poster small,
+.display-poster span,
+.display-comic small,
+.display-comic span {
+  font: 800 0.6rem Inter;
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   6. INTRO STRIP
+   ========================================================= */
+
+.intro-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--red);
+  color: #fff;
+  border-block: 1px solid #111;
+}
+
+.intro-strip div {
+  padding: 20px 8vw;
+  font: 1rem 'Archivo Black';
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.intro-strip b {
+  font: 800 0.6rem Inter;
+  opacity: 0.6;
+  margin-right: 14px;
+}
+
+
+/* =========================================================
+   7. SECTIONS
+   ========================================================= */
+
+.section {
+  padding: 100px 8vw;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 45px;
+}
+
+.section-head h2 {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+}
+
+.section-head > p {
+  max-width: 390px;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   8. CATEGORY FILTERS
+   ========================================================= */
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -12px 0 28px;
+  position: sticky;
+  top: 70px;
+  z-index: 5;
+  background: #fffdf8;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd7cc;
+}
+
+.category-tabs button {
+  border: 1px solid #111;
+  background: #fff;
+  padding: 9px 13px;
+  font: 700 0.68rem Inter, Arial, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.category-tabs button:hover,
+.category-tabs button.active {
+  background: #111;
+  color: #fff;
+}
+
+
+/* =========================================================
+   9. PRODUCTS
+   ========================================================= */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.product {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0 var(--line);
+}
+
+.product[hidden] {
+  display: none !important;
+}
+
+.product-image {
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Archivo Black';
+  font-size: 1.4rem;
+}
+
+.comic-image {
+  background: #292d33;
+  color: #fff;
+}
+
+.poster-image {
+  background: #d7d1c7;
+  color: #615b54;
+}
+
+.product-info {
+  padding: 15px 3px 5px;
+}
+
+.product-info h3 {
+  font-size: 1rem;
+  letter-spacing: -0.035em;
+}
+
+.product-info p {
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin: 6px 0 12px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font: 1rem 'Archivo Black';
+}
+
+.add {
+  border: 1px solid var(--black);
+  background: var(--black);
+  color: #fff;
+  padding: 9px 10px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   10. NEW ARRIVALS
+   ========================================================= */
+
+.arrivals {
+  background: #f5f2eb;
+}
+
+.arrivals-empty {
+  border: 2px dashed #bbb2a4;
+  background: #fffdf8;
+  padding: 35px;
+  text-align: center;
+  color: #77716a;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   11. FEATURE / VAULT
+   ========================================================= */
+
+.feature {
+  background: var(--black);
+  color: #fff;
+  min-height: 600px;
+  padding: 90px 8vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.feature h2 {
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+}
+
+.feature > div:first-child > p:not(.eyebrow) {
+  color: #bbb;
+  max-width: 500px;
+  margin: 25px 0 30px;
+}
+
+.vault-box {
+  justify-self: center;
+  border: 7px solid #fff;
+  width: 330px;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font: 7rem 'Archivo Black';
+  transform: rotate(5deg);
+  box-shadow: 18px 18px 0 var(--red);
+}
+
+.vault-box small {
+  font: 800 0.62rem Inter;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+
+/* =========================================================
+   12. ABOUT
+   ========================================================= */
+
+.about {
+  text-align: center;
+  padding: 120px 8vw;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+.about > p:last-child {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 28px auto;
+}
+
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+footer {
+  background: var(--black);
+  color: #fff;
+  padding: 35px 8vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+footer p {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   14. CART
+   ========================================================= */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+
+.overlay.open {
+  display: block;
+}
+
+.cart-panel {
+  position: fixed;
+  right: -430px;
+  top: 0;
+  width: min(430px, 100%);
+  height: 100vh;
+  background: var(--white);
+  z-index: 40;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.25s;
+}
+
+.cart-panel.open {
+  right: 0;
+}
+
+.cart-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.cart-top h3 {
+  font-size: 1.5rem;
+}
+
+.cart-top button {
+  border: 0;
+  background: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cart-bottom {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.cart-bottom > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.cart-bottom strong {
+  font-family: 'Archivo Black';
+}
+
+.cart-bottom .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.tiny {
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item h4 {
+  font-size: 0.8rem;
+}
+
+.cart-item button {
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.65rem;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 25px 0;
+}
+
+
+/* =========================================================
+   15. TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 65px 6vw;
+  }
+
+  .hero-display {
+    height: 390px;
+  }
+
+  .intro-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-strip div {
+    padding: 17px 6vw;
+  }
+
+  .section,
+  .feature {
+    padding: 75px 6vw;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head > p {
+    margin-top: 15px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+  }
+
+  .vault-box {
+    margin-top: 60px;
+  }
+}
+
+
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 3.8rem;
+  }
+
+  .hero-display {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 320px;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer p {
+    margin-top: 8px;
+  }
+
+  .category-tabs {
+    top: 64px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 9px 0;
+    gap: 6px;
+  }
+
+  .category-tabs button {
+    flex: 0 0 auto;
+    font-size: 0.62rem;
+    padding: 8px 10px;
+  }
+
+  .shop-search {
+    padding: 7px 5%;
+  }
+
+  .search-inner {
+    height: 36px;
+    padding: 0 11px;
+  }
+
+  .search-inner input {
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .search-icon {
+    font-size: 1.1rem;
+  }
+}
