@@ -22,3 +22,7 @@ A GitHub Pages-ready static shop for Comic Reel & Retro.
 
 ## Next
 Replace placeholder products with real stock, add actual product images, create individual product pages, then connect checkout and the IONOS domain.
+
+
+## Categories
+Comics: Marvel, DC, 2000 AD, British Comics, Independent, Manga, Other. Posters: Movies, TV, Horror, Gaming, Superheroes, Sci-Fi, Other. Lightweight client-side filters are included.

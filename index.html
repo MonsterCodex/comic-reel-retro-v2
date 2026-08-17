@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Comic Reel & Retro — comics, posters and pop culture collectibles.">
-<title>ComicReelRetro | Comics & Posters</title>
+<title>Comic Reel & Retro | Comics & Posters</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,7 +46,9 @@
     <div><p class="eyebrow">01 / COMIC VAULT</p><h2>Comics for<br><em>collectors.</em></h2></div>
     <p>Every comic will have its own listing with issue number, publisher, year, condition and price.</p>
   </div>
-  <div class="products" id="comicProducts"></div>
+  <div class="category-tabs" data-target="comicProducts">
+<button class="active" data-filter="all">All</button><button data-filter="Marvel">Marvel</button><button data-filter="DC">DC</button><button data-filter="2000AD">2000 AD</button><button data-filter="British">British</button><button data-filter="Independent">Independent</button><button data-filter="Manga">Manga</button><button data-filter="Other">Other</button>
+</div><div class="products" id="comicProducts"></div>
 </section>
 
 <section class="feature">
@@ -64,7 +66,9 @@
     <div><p class="eyebrow">02 / POSTER WALL</p><h2>Bring the<br><em>screen home.</em></h2></div>
     <p>Movie, TV, horror, gaming and pop-culture posters from licensed suppliers and selected stock.</p>
   </div>
-  <div class="products" id="posterProducts"></div>
+  <div class="category-tabs" data-target="posterProducts">
+<button class="active" data-filter="all">All</button><button data-filter="Movies">Movies</button><button data-filter="TV">TV</button><button data-filter="Horror">Horror</button><button data-filter="Gaming">Gaming</button><button data-filter="Superheroes">Superheroes</button><button data-filter="Sci-Fi">Sci-Fi</button><button data-filter="Other">Other</button>
+</div><div class="products" id="posterProducts"></div>
 </section>
 
 <section class="about" id="about">
