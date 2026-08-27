@@ -1152,7 +1152,7 @@ footer p {
 }
 
 .header {
-  min-height: 120px;
+  min-height: 170px;
   height: auto;
   overflow: visible;
 }
@@ -1171,7 +1171,34 @@ footer p {
 }
 
 .logo img {
-  width: 260px;
+  width: 220px;
   height: auto;
   display: block;
+}
+
+/* =========================================================
+   HERO COMIC BACKGROUND
+   ========================================================= */
+
+.hero {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
+    url("hero-comics.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+    position: relative !important;
+    background-image: url("images/hero-comics.png") !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
