@@ -67,7 +67,7 @@ nav {
   display: flex;
   gap: 30px;
   text-transform: uppercase;
-  font-size: 0.76rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
@@ -99,7 +99,7 @@ nav a:hover {
 .shop-search {
   background: #fffdf8;
   border-bottom: 1px solid #ddd7cc;
-  padding: 8px 6%;
+  padding: 10px 6%;
   position: relative;
   z-index: 2;
 }
@@ -1201,4 +1201,92 @@ footer p {
     background-size: 100% 100% !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+}
+
+.display-poster {
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)),
+    linear-gradient(135deg, #263f4d, #111);
+  border: 3px solid #fff;
+}
+
+.display-poster strong {
+  font-size: 2.7rem;
+  line-height: .82;
+  text-transform: uppercase;
+}
+
+.display-comic {
+  background:
+    radial-gradient(circle at 30% 20%, #fff176 0 3%, transparent 4%),
+    #e52b2f;
+  border: 3px solid #fff;
+}
+
+.display-comic strong {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 5px 5px 0 #080808;
+}
+
+.display-comic span {
+  color: #fff;
+}
+
+.display-comic {
+  padding: 5px;
+}
+
+.display-comic img {
+  width: 100%;
+  height: 285px;
+  object-fit: contain;
+  display: block;
+}
+
+.display-comic {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  height: auto !important;
+}
+
+.display-comic img {
+  width: 215px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border: 4px solid #fff;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+.display-poster {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  height: 390px;
+  width: 270px;
+}
+
+.display-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: 4px solid #fff;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+.display-poster small,
+.display-poster span {
+  display: none;
+}
+
+.display-poster img,
+.display-comic img {
+  filter:
+    drop-shadow(12px 12px 8px rgb(173, 23, 23))
+    drop-shadow(0 0 3px rgba(228, 23, 23, 0.8));
 }
