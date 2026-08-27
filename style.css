@@ -5,13 +5,13 @@
    ========================================================= */
 
 :root {
-  --black: #101010;
-  --paper: #f1ede5;
-  --white: #fffaf1;
-  --red: #d84b2f;
-  --gold: #cda33b;
-  --muted: #746f68;
-  --line: #d4cec4;
+  --black: #080808;
+  --paper: #0d0d0d;
+  --white: #f5f5f5;
+  --red: #e52b2f;
+  --gold: #f0b90b;
+  --muted: #a6a6a6;
+  --line: #292929;
 }
 
 * {

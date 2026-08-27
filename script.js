@@ -1,5 +1,5 @@
 const products = [
-  {id:1,type:"comic",category:"Marvel",name:"Comic Find #001",meta:"Marvel / Year TBC / Condition TBC",price:9.99},
+  {id:1,type:"comic",category:"Marvel",name:"Marvel Retro Classic #001",meta:"Marvel / 1980s / Very Good",price:9.99},
   {id:2,type:"comic",category:"DC",name:"Comic Find #002",meta:"DC / Year TBC / Condition TBC",price:12.99},
   {id:3,type:"comic",category:"2000AD",name:"Comic Find #003",meta:"2000 AD / Year TBC / Condition TBC",price:7.99},
   {id:4,type:"comic",category:"British",name:"Comic Find #004",meta:"British Comics / Year TBC / Condition TBC",price:9.99},
