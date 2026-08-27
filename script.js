@@ -21,22 +21,31 @@ function card(p) {
   const label = p.type === "comic" ? "COMIC" : "POSTER";
   const cls = p.type === "comic" ? "comic-image" : "poster-image";
 
+  const image = p.id === 1
+    ? `<img src="images/wolf-comic.png" alt="${p.name}">`
+    : `${label}<br>#${String(p.id).padStart(3, "0")}`;
+
   return `
     <article class="product">
       <a class="product-link" href="product.html?id=${p.id}" aria-label="View ${p.name}">
         <div class="product-image ${cls}">
-          ${label}<br>#${String(p.id).padStart(3, "0")}
+          ${image}
         </div>
+
         <div class="product-info">
           <h3>${p.name}</h3>
           <p>${p.meta}</p>
+
           <div class="price-row">
             <span class="price">£${p.price.toFixed(2)}</span>
             <span class="add">VIEW</span>
           </div>
         </div>
       </a>
-      <button class="quick-add" onclick="addToCart(${p.id})">ADD TO BAG</button>
+
+      <button class="quick-add" onclick="addToCart(${p.id})">
+        ADD TO BAG
+      </button>
     </article>
   `;
 }

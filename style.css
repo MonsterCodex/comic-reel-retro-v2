@@ -798,3 +798,312 @@ footer p {
     font-size: 1.1rem;
   }
 }
+
+/* =========================================================
+   COMIC REEL & RETRO — BLACK / RED THEME
+========================================================= */
+
+body {
+  background: #0d0d0d;
+  color: #f5f5f5;
+}
+
+/* HEADER */
+
+.header {
+  background: #080808;
+  border-bottom: 2px solid #e52b2f;
+}
+
+.logo {
+  color: #ffffff;
+}
+
+.logo span {
+  color: #e52b2f;
+}
+
+nav a {
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #e52b2f;
+}
+
+.cart-button {
+  background: #e52b2f;
+  color: #ffffff;
+}
+
+.cart-button span {
+  color: #ffffff;
+}
+
+
+/* SEARCH */
+
+.shop-search {
+  background: #0d0d0d;
+  border-bottom: 1px solid #292929;
+}
+
+.search-inner {
+  background: #151515;
+  border: 1px solid #444;
+}
+
+.search-inner:focus-within {
+  border-color: #e52b2f;
+  box-shadow: 0 0 0 3px rgba(229, 43, 47, 0.15);
+}
+
+.search-inner input {
+  color: #ffffff;
+}
+
+.search-inner input::placeholder {
+  color: #888;
+}
+
+.search-icon {
+  color: #e52b2f;
+}
+
+
+/* HERO */
+
+.hero {
+  background: #0d0d0d;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  color: #a6a6a6;
+}
+
+.eyebrow {
+  color: #e52b2f;
+}
+
+h1,
+h2,
+h3 {
+  color: #ffffff;
+}
+
+h1 em,
+h2 em {
+  color: #e52b2f;
+}
+
+
+/* BUTTONS */
+
+.btn {
+  border-color: #e52b2f;
+}
+
+.btn.dark {
+  background: #e52b2f;
+  border-color: #e52b2f;
+  color: #ffffff;
+}
+
+.btn.light {
+  background: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn.light:hover {
+  background: #ffffff;
+  color: #080808;
+}
+
+
+/* INTRO STRIP */
+
+.intro-strip {
+  background: #e52b2f;
+  border-color: #e52b2f;
+}
+
+
+/* SECTIONS */
+
+.section {
+  background: #0d0d0d;
+}
+
+.section-head > p {
+  color: #a6a6a6;
+}
+
+
+/* CATEGORY BUTTONS */
+
+.category-tabs {
+  background: #0d0d0d;
+  border-bottom: 1px solid #292929;
+}
+
+.category-tabs button {
+  background: #151515;
+  border: 1px solid #383838;
+  color: #ffffff;
+}
+
+.category-tabs button:hover,
+.category-tabs button.active {
+  background: #e52b2f;
+  border-color: #e52b2f;
+  color: #ffffff;
+}
+
+
+/* PRODUCTS */
+
+.products {
+  background: #0d0d0d;
+}
+
+.product {
+  background: #151515;
+  border: 1px solid #303030;
+}
+
+.product:hover {
+  box-shadow: 8px 8px 0 #e52b2f;
+}
+
+.comic-image {
+  background: #111111;
+  color: #ffffff;
+  border: 2px solid #292929;
+}
+
+.poster-image {
+  background: #171717;
+  color: #ffffff;
+}
+
+.product-info h3 {
+  color: #ffffff;
+}
+
+.product-info p {
+  color: #999999;
+}
+
+.price {
+  color: #e52b2f;
+}
+
+.add {
+  background: #e52b2f;
+  border-color: #e52b2f;
+  color: #ffffff;
+}
+
+.add:hover {
+  background: #ff3b40;
+}
+
+
+/* NEW ARRIVALS */
+
+.arrivals {
+  background: #111111;
+}
+
+.arrivals-empty {
+  background: #151515;
+  border-color: #444;
+  color: #999;
+}
+
+
+/* FEATURE */
+
+.feature {
+  background: #050505;
+}
+
+.vault-box {
+  border-color: #ffffff;
+  box-shadow: 18px 18px 0 #e52b2f;
+}
+
+
+/* ABOUT */
+
+.about {
+  background: #0d0d0d;
+}
+
+.about > p:last-child {
+  color: #999999;
+}
+
+
+/* FOOTER */
+
+footer {
+  background: #050505;
+  border-top: 2px solid #e52b2f;
+}
+
+footer p {
+  color: #888888;
+}
+
+
+/* CART */
+
+.cart-panel {
+  background: #111111;
+  color: #ffffff;
+}
+
+.cart-top {
+  border-color: #292929;
+}
+
+.cart-bottom {
+  border-color: #292929;
+}
+
+.cart-item {
+  border-color: #292929;
+}
+
+.cart-item h4 {
+  color: #ffffff;
+}
+
+.cart-item button {
+  color: #e52b2f;
+}
+
+.tiny,
+.empty {
+  color: #888888;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+
+  .category-tabs {
+    background: #0d0d0d;
+  }
+
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
