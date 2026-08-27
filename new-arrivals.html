@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Comic Reel & Retro — the latest comics, posters and retro finds."
+  >
+
+  <title>Comic Reel & Retro | New Arrivals</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Comic Reel & Retro">
+  </a>
+
+  <nav>
+   <a href="index.html">Home</a>
+  <a href="comics.html">Comics</a>
+  <a href="posters.html">Posters</a>
+  <a href="new-arrivals.html">New Arrivals</a>
+  <a href="sell-to-us.html">Sell To Us</a>
+  <a href="about.html">About</a></nav>
+  </nav>
+
+  <button class="cart-button" id="cartButton">
+    Bag <span id="cartCount">0</span>
+  </button>
+
+</header>
+
+
+<div class="shop-search">
+
+  <div class="search-inner">
+
+    <span class="search-icon" aria-hidden="true">⌕</span>
+
+    <input
+      id="siteSearch"
+      type="search"
+      placeholder="Search comics, posters, characters, publishers..."
+      autocomplete="off"
+      aria-label="Search the shop"
+    >
+
+    <button
+      id="clearSearch"
+      class="search-clear"
+      type="button"
+      aria-label="Clear search"
+      hidden
+    >×</button>
+
+  </div>
+
+  <p id="searchStatus" class="search-status" aria-live="polite"></p>
+
+</div>
+
+
+<main>
+
+<section class="section arrivals" id="new-arrivals">
+
+  <div class="section-head">
+
+    <div>
+      <p class="eyebrow">NEW STOCK</p>
+      <h1>NEW<br><em>ARRIVALS.</em></h1>
+    </div>
+
+    <p>
+      Fresh finds, recently added to the Comic Reel & Retro vault.
+      Check back regularly as new stock arrives.
+    </p>
+
+  </div>
+
+  <div class="products" id="newArrivalProducts"></div>
+
+</section>
+
+</main>
+
+
+<div class="cart-panel" id="cartPanel">
+
+  <div class="cart-top">
+    <h3>Your bag</h3>
+    <button id="closeCart">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-bottom">
+
+    <div>
+      <span>Total</span>
+      <strong id="cartTotal">£0.00</strong>
+    </div>
+
+    <button class="btn dark" id="checkout">
+      Checkout
+    </button>
+
+    <p class="tiny">
+      Checkout will be connected to your chosen
+      payment platform later.
+    </p>
+
+  </div>
+
+</div>
+
+
+<div class="overlay" id="overlay"></div>
+
+
+<footer>
+
+  <div class="logo">
+    COMIC <span>REEL</span> & RETRO
+  </div>
+
+  <p>Posters • Comics • Pop Culture</p>
+
+  <p>hello@comicreelretro.co.uk</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

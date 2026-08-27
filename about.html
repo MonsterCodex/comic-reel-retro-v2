@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="About Comic Reel & Retro — comics, posters and pop culture."
+  >
+
+  <title>Comic Reel & Retro | About Us</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Comic Reel & Retro">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="comics.html">Comics</a>
+    <a href="posters.html">Posters</a>
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="sell-to-us.html">Sell To Us</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <button class="cart-button" id="cartButton">
+    Bag <span id="cartCount">0</span>
+  </button>
+
+</header>
+
+
+<div class="shop-search">
+
+  <div class="search-inner">
+
+    <span class="search-icon" aria-hidden="true">⌕</span>
+
+    <input
+      id="siteSearch"
+      type="search"
+      placeholder="Search comics, posters, characters, publishers..."
+      autocomplete="off"
+      aria-label="Search the shop"
+    >
+
+    <button
+      id="clearSearch"
+      class="search-clear"
+      type="button"
+      aria-label="Clear search"
+      hidden
+    >×</button>
+
+  </div>
+
+  <p id="searchStatus" class="search-status" aria-live="polite"></p>
+
+</div>
+
+
+<main>
+
+<section class="about-page">
+
+  <div class="about-page-inner">
+
+    <p class="eyebrow">ABOUT COMIC REEL & RETRO</p>
+
+    <h1>
+      FOR PEOPLE WHO<br>
+      <em>STILL LOVE THE HUNT.</em>
+    </h1>
+
+    <div class="about-copy">
+
+      <p>
+        Comic Reel & Retro was created for people who love the
+        excitement of finding something special.
+      </p>
+
+      <p>
+        From classic comic books and modern issues to movie
+        posters and retro pop-culture pieces, we're building
+        a shop around the things that make collecting exciting
+        — great characters, artwork, nostalgia and the hunt
+        for that next great find.
+      </p>
+
+      <p>
+        We believe great collectibles don't have to cost a
+        fortune. Whether you're a lifelong collector, a comic
+        reader, a movie fan or simply looking for something
+        different, we're here to bring interesting pieces
+        together in one place.
+      </p>
+
+      <p>
+        We're constantly searching for comics, posters and
+        retro finds worth sharing — from affordable reader
+        copies to pieces that deserve a place in a serious
+        collection.
+      </p>
+
+    </div>
+
+
+    <div class="about-statement">
+
+      <h2>
+        FIND SOMETHING YOU LOVE.<br>
+        GIVE IT A NEW HOME.<br>
+        <em>KEEP THE HUNT ALIVE.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="about-bottom">
+
+      <p class="eyebrow">COMIC REEL & RETRO</p>
+
+      <p>
+        <strong>Comics • Posters • Pop Culture</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<main class="page-background about-page-background">
+
+<div class="cart-panel" id="cartPanel">
+
+  <div class="cart-top">
+    <h3>Your bag</h3>
+    <button id="closeCart">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-bottom">
+
+    <div>
+      <span>Total</span>
+      <strong id="cartTotal">£0.00</strong>
+    </div>
+
+    <button class="btn dark" id="checkout">
+      Checkout
+    </button>
+
+    <p class="tiny">
+      Checkout will be connected to your chosen
+      payment platform later.
+    </p>
+
+  </div>
+
+</div>
+
+
+<div class="overlay" id="overlay"></div>
+
+
+<footer>
+
+  <div class="logo">
+    COMIC <span>REEL</span> & RETRO
+  </div>
+
+  <p>Posters • Comics • Pop Culture</p>
+
+  <p>hello@comicreelretro.co.uk</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

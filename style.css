@@ -1276,7 +1276,7 @@ footer p {
   object-fit: contain;
   display: block;
   border: 4px solid #fff;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.164);
 }
 
 .display-poster small,
@@ -1286,7 +1286,361 @@ footer p {
 
 .display-poster img,
 .display-comic img {
-  filter:
-    drop-shadow(12px 12px 8px rgb(173, 23, 23))
-    drop-shadow(0 0 3px rgba(228, 23, 23, 0.8));
+  filter: drop-shadow(8px 8px 8px rgba(255, 253, 253, 0.582));
+}
+
+/* VISIBLE HERO COVER SHADOWS */
+
+.display-poster img,
+.display-comic img {
+  position: relative;
+  z-index: 10;
+  border: 4px solid #ffffff !important;
+  box-shadow: 18px 18px 0 #e52b2f !important;
+}
+
+/* =========================================================
+   SELL TO US PAGE
+========================================================= */
+
+.sell-hero {
+  min-height: 560px;
+  padding: 100px 8vw;
+  background:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
+    url("images/hero-comics.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.sell-hero h1 {
+  max-width: 900px;
+}
+
+.sell-intro {
+  max-width: 600px;
+  margin: 30px 0;
+  color: #aaa;
+  font-size: 1.05rem;
+}
+
+.sell-section {
+  padding: 100px 8vw;
+  background: #0d0d0d;
+}
+
+.sell-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.sell-card {
+  background: #151515;
+  border: 1px solid #303030;
+  padding: 30px;
+  min-height: 240px;
+}
+
+.sell-card span {
+  color: #e52b2f;
+  font-weight: 800;
+  font-size: .7rem;
+}
+
+.sell-card h3 {
+  margin: 35px 0 15px;
+  font-size: 1.5rem;
+}
+
+.sell-card p {
+  color: #999;
+  font-size: .85rem;
+}
+
+.sell-process {
+  padding: 100px 8vw;
+  background: #050505;
+  color: #fff;
+}
+
+.sell-process h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin: 20px 0 60px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.process-grid > div {
+  border-top: 2px solid #e52b2f;
+  padding-top: 20px;
+}
+
+.process-grid strong {
+  color: #e52b2f;
+  font-size: .7rem;
+}
+
+.process-grid h3 {
+  margin: 20px 0 10px;
+}
+
+.process-grid p {
+  color: #999;
+  max-width: 350px;
+}
+
+.sell-contact {
+  padding: 100px 8vw;
+  background: #e52b2f;
+  color: #fff;
+}
+
+.sell-contact h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin: 20px 0;
+}
+
+.sell-contact .eyebrow {
+  color: #fff;
+}
+
+.sell-contact-inner > p:not(.eyebrow) {
+  max-width: 500px;
+}
+
+.contact-box {
+  margin-top: 50px;
+  background: #080808;
+  padding: 40px;
+  max-width: 600px;
+  border: 3px solid #fff;
+  box-shadow: 12px 12px 0 rgba(0,0,0,.7);
+}
+
+.contact-box h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-box p {
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.contact-box ul {
+  margin: 15px 0 25px 20px;
+  color: #ddd;
+}
+
+.contact-box li {
+  margin-bottom: 7px;
+}
+
+@media (max-width: 850px) {
+
+  .sell-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .sell-hero,
+  .sell-section,
+  .sell-process,
+  .sell-contact {
+    padding: 70px 6vw;
+  }
+
+  .sell-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 25px;
+  }
+
+}
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-page {
+  min-height: calc(100vh - 170px);
+  padding: 110px 8vw;
+  background:
+    linear-gradient(rgba(0,0,0,.86), rgba(0,0,0,.86)),
+    url("images/hero-comics.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.about-page-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-page h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  margin: 20px 0 45px;
+}
+
+.about-copy {
+  max-width: 760px;
+}
+
+.about-copy p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.about-statement {
+  margin-top: 80px;
+  padding: 45px;
+  border-left: 5px solid #e52b2f;
+  background: rgba(255,255,255,.03);
+}
+
+.about-statement h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.about-bottom {
+  margin-top: 70px;
+}
+
+.about-bottom p:last-child {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+
+  .about-page {
+    padding: 70px 6vw;
+  }
+
+  .about-statement {
+    padding: 25px;
+  }
+
+}
+
+/* CONSISTENT MAIN PAGE HEADINGS */
+
+.section-head h1,
+.section-head h2,
+.about-page h1,
+.sell-hero h1,
+.sell-process h2,
+.sell-contact h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+/* =========================================================
+   PAGE BACKGROUND IMAGES
+========================================================= */
+
+.page-background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+/* Dark overlay */
+.page-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep page content above the background */
+.page-background > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* COMICS */
+.comics-page {
+  background-image: url("images/comics.png");
+}
+
+
+/* POSTERS */
+.posters-page {
+  background-image: url("images/posters.png");
+}
+
+
+/* NEW ARRIVALS */
+.new-arrivals-page {
+  background-image: url("images/new-arrivals.png");
+}
+
+
+/* SELL TO US */
+.sell-page {
+  background-image: url("images/sell-to-us.png");
+}
+
+
+/* ABOUT */
+.about-page-background {
+  background-image: url("images/about-us.png");
+}
+
+/* =========================================================
+   PAGE BACKGROUND IMAGES
+========================================================= */
+
+.page-background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0d0d0d;
+}
+
+.page-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-background > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* COMICS */
+.comics-page {
+  background-image: url("images/comics.png");
 }

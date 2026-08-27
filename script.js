@@ -68,7 +68,7 @@ function scrollToResults(targetId) {
   if (!target) return;
 
   const top =
-    target.getBoundingClientRect().top + window.scrollY - 115;
+    target.getBoundingClientRect().top + window.scrollY -170;
 
   window.scrollTo({
     top,
@@ -194,10 +194,21 @@ function renderCart() {
     cart.reduce((sum, p) => sum + p.price, 0).toFixed(2);
 }
 
-renderProducts("comic");
-renderProducts("poster");
+// PAGE SETUP
+
+if (document.getElementById("comicProducts")) {
+  renderProducts("comic");
+}
+
+if (document.getElementById("posterProducts")) {
+  renderProducts("poster");
+}
+
+if (document.getElementById("newArrivalProducts")) {
+  renderNewArrivals();
+}
+
 setupCategoryTabs();
-renderNewArrivals();
 setupSearch();
 renderCart();
 

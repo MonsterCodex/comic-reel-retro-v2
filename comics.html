@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comic Reel & Retro — comic books for collectors and readers.">
+  <title>Comic Reel & Retro | Comics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Comic Reel & Retro">
+  </a>
+
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="comics.html">Comics</a>
+  <a href="posters.html">Posters</a>
+  <a href="new-arrivals.html">New Arrivals</a>
+  <a href="sell-to-us.html">Sell To Us</a>
+  <a href="about.html">About</a></nav>
+
+  <button class="cart-button" id="cartButton">
+    Bag <span id="cartCount">0</span>
+  </button>
+</header>
+
+<div class="shop-search">
+  <div class="search-inner">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+
+    <input
+      id="siteSearch"
+      type="search"
+      placeholder="Search comics, characters, publishers..."
+      autocomplete="off"
+      aria-label="Search the shop"
+    >
+
+    <button
+      id="clearSearch"
+      class="search-clear"
+      type="button"
+      aria-label="Clear search"
+      hidden
+    >×</button>
+  </div>
+
+  <p id="searchStatus" class="search-status" aria-live="polite"></p>
+</div>
+
+<main class="page-background comics-page">
+    
+<section class="section" id="comics">
+
+  <div class="section-head">
+
+    <div>
+      <p class="eyebrow">01 / COMIC VAULT</p>
+      <h1>COMICS FOR<br><em>COLLECTORS.</em></h1>
+    </div>
+
+    <p>
+      Explore comics from Marvel, DC, 2000 AD,
+      British publishers, independent creators,
+      manga and more.
+    </p>
+
+  </div>
+
+  <div class="category-tabs" data-target="comicProducts">
+
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="Marvel">Marvel</button>
+    <button data-filter="DC">DC</button>
+    <button data-filter="2000AD">2000 AD</button>
+    <button data-filter="British">British</button>
+    <button data-filter="Indie">Independent</button>
+    <button data-filter="Manga">Manga</button>
+    <button data-filter="Other">Other</button>
+
+  </div>
+
+  <div class="products" id="comicProducts"></div>
+
+</section>
+
+</main>
+
+<div class="cart-panel" id="cartPanel">
+
+  <div class="cart-top">
+    <h3>Your bag</h3>
+    <button id="closeCart">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-bottom">
+
+    <div>
+      <span>Total</span>
+      <strong id="cartTotal">£0.00</strong>
+    </div>
+
+    <button class="btn dark" id="checkout">
+      Checkout
+    </button>
+
+    <p class="tiny">
+      Checkout will be connected to your chosen
+      payment platform later.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<footer>
+
+  <div class="logo">
+    COMIC <span>REEL</span> & RETRO
+  </div>
+
+  <p>Posters • Comics • Pop Culture</p>
+
+  <p>hello@comicreelretro.co.uk</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
