@@ -11,8 +11,8 @@ const products = [
     year:"2021",
     publisher:"Marvel",
     creators:"Nick Spencer • Patrick Gleason • Edgar Delgado",
-    condition:"Condition to be confirmed",
-    description:"The Amazing Spider-Man #61 from 2021. This is the actual copy photographed for the listing."
+    condition:"Very Good",
+    description:"The Amazing Spider-Man #61 from 2021. Peter Parker gets a new job and Spider-Man gets a new look as Kingpin's plans begin to come together.",story:"This issue kicks off the King's Ransom storyline. The return of the Lifeline Tablet draws Kingpin into a dangerous plan, while Peter adopts a new Spider-Man suit and the wider conflict begins to build.",additional:"Written by Nick Spencer, with art by Patrick Gleason and colours by Edgar Delgado. Marvel lists the issue as published March 10, 2021."
   },
   {
     id:2,
@@ -26,8 +26,8 @@ const products = [
     year:"2022",
     publisher:"Marvel",
     creators:"Cody Ziglar • Paco Medina • Arthur Adams",
-    condition:"Condition to be confirmed",
-    description:"The Amazing Spider-Man #84 from 2022, from the Beyond storyline. This is the actual copy photographed for the listing."
+    condition:"Very Good",
+    description:"The Amazing Spider-Man #84 from 2022, part of the Beyond storyline. Doctor Octopus is on a collision course with the Beyond Corporation and its Spider-Hero, Ben Reilly.",story:"The issue follows the growing conflict between Doctor Octopus and Beyond, with Ben Reilly caught up in the confrontation. It forms part of the Beyond era in which Ben Reilly is operating as Spider-Man.",additional:"Written by Cody Ziglar, pencilled by Paco Medina, with cover art by Arthur Adams. Marvel lists the issue as published January 5, 2022."
   },
   {id:3,type:"comic",category:"2000AD",name:"Comic Find #003",meta:"2000 AD / Year TBC / Issue TBC",price:7.99},
   {id:4,type:"comic",category:"British",name:"Comic Find #004",meta:"British Comics / Year TBC / Issue TBC",price:9.99},
@@ -272,13 +272,23 @@ function renderProductPage() {
 
         <div class="detail-section">
           <h2>CONDITION</h2>
-          <p>${product.condition || "Condition to be confirmed. Please see the photographs."}</p>
+          <p>${product.condition || (product.type === "comic" ? "Very Good" : "Condition to be confirmed. Please see the photographs.")}</p>
         </div>
 
         <div class="detail-section">
           <h2>DESCRIPTION</h2>
           <p>${product.description || "Please see the photographs for the actual item."}</p>
         </div>
+
+        ${product.story ? `<div class="detail-section">
+          <h2>STORY / OVERVIEW</h2>
+          <p>${product.story}</p>
+        </div>` : ""}
+
+        ${product.additional ? `<div class="detail-section">
+          <h2>ADDITIONAL INFO</h2>
+          <p>${product.additional}</p>
+        </div>` : ""}
 
         <div class="detail-section">
           <h2>DELIVERY</h2>
