@@ -291,6 +291,11 @@ function renderProductPage() {
         </div>` : ""}
 
         <div class="detail-section">
+          <h2>PACKAGING</h2>
+          <p>Comics will be supplied bagged and boarded to help protect them during storage and delivery.</p>
+        </div>
+
+        <div class="detail-section">
           <h2>DELIVERY</h2>
           <p>UK delivery information will be shown here once delivery rates are finalised.</p>
         </div>
