@@ -178,8 +178,17 @@ nav a:hover {
 
 .hero {
   min-height: 670px;
-  background: var(--white);
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
+    url("images/hero-comics.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   padding: 90px 8vw;
+
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 50px;
@@ -395,34 +404,34 @@ h2 em {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(5, 220px);
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px 70px;
 }
 
 .product {
-  background: var(--white);
-  border: 1px solid var(--line);
-  padding: 12px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 8px 0 var(--line);
-}
-
-.product[hidden] {
-  display: none !important;
+  width: 220px;
 }
 
 .product-image {
-  height: 290px;
+  width: 220px;
+  height: 300px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-family: 'Archivo Black';
-  font-size: 1.4rem;
+
+  background: #151515;
+  overflow: hidden;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .comic-image {
@@ -684,139 +693,118 @@ footer p {
 
 
 /* =========================================================
-   15. TABLET
-   ========================================================= */
+   PRODUCT GRID — FIXED SIZE
+========================================================= */
 
-@media (max-width: 850px) {
-  nav {
-    display: none;
-  }
+.products {
+  display: grid;
+  grid-template-columns: repeat(5, 220px);
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px 70px;
+}
 
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 65px 6vw;
-  }
+.product {
+  width: 220px;
+}
 
-  .hero-display {
-    height: 390px;
-  }
+.product-image {
+  width: 220px;
+  height: 300px;
 
-  .intro-strip {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .intro-strip div {
-    padding: 17px 6vw;
-  }
+  background: #151515;
+  overflow: hidden;
+}
 
-  .section,
-  .feature {
-    padding: 75px 6vw;
-  }
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
 
-  .section-head {
-    display: block;
-  }
 
-  .section-head > p {
-    margin-top: 15px;
-  }
+/* =========================================================
+   LARGE TABLET
+========================================================= */
 
+@media (max-width: 1200px) {
   .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .feature {
-    grid-template-columns: 1fr;
-  }
-
-  .vault-box {
-    margin-top: 60px;
+    grid-template-columns: repeat(4, 220px);
   }
 }
 
 
 /* =========================================================
-   16. MOBILE
-   ========================================================= */
+   TABLET
+========================================================= */
 
-@media (max-width: 520px) {
-  h1 {
-    font-size: 3.8rem;
-  }
-
-  .hero-display {
-    transform: scale(0.8);
-    transform-origin: center;
-  }
-
+@media (max-width: 950px) {
   .products {
-    grid-template-columns: 1fr;
-  }
-
-  .product-image {
-    height: 320px;
-  }
-
-  footer {
-    display: block;
-  }
-
-  footer p {
-    margin-top: 8px;
-  }
-
-  .category-tabs {
-    top: 64px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding: 9px 0;
-    gap: 6px;
-  }
-
-  .category-tabs button {
-    flex: 0 0 auto;
-    font-size: 0.62rem;
-    padding: 8px 10px;
-  }
-
-  .shop-search {
-    padding: 7px 5%;
-  }
-
-  .search-inner {
-    height: 36px;
-    padding: 0 11px;
-  }
-
-  .search-inner input {
-    height: 32px;
-    font-size: 0.75rem;
-  }
-
-  .search-icon {
-    font-size: 1.1rem;
+    grid-template-columns: repeat(3, 220px);
   }
 }
 
+
 /* =========================================================
-   COMIC REEL & RETRO — BLACK / RED THEME
+   SMALL TABLET / LARGE MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .products {
+    grid-template-columns: repeat(2, 220px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 220px;
+  }
+}
+
+
+/* =========================================================
+   COMIC REEL & RETRO — FINAL DARK THEME
 ========================================================= */
 
 body {
   background: #0d0d0d;
   color: #f5f5f5;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+
 
 .header {
+  min-height: 170px;
+  height: auto;
   background: #080808;
   border-bottom: 2px solid #e52b2f;
+  overflow: visible;
 }
 
 .logo {
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0;
+  color: #fff;
+}
+
+.logo img {
+  width: 220px;
+  height: auto;
+  display: block;
 }
 
 .logo span {
@@ -824,7 +812,7 @@ body {
 }
 
 nav a {
-  color: #ffffff;
+  color: #fff;
 }
 
 nav a:hover {
@@ -833,15 +821,15 @@ nav a:hover {
 
 .cart-button {
   background: #e52b2f;
-  color: #ffffff;
+  color: #fff;
 }
 
 .cart-button span {
-  color: #ffffff;
+  color: #fff;
 }
 
 
-/* SEARCH */
+
 
 .shop-search {
   background: #0d0d0d;
@@ -850,16 +838,16 @@ nav a:hover {
 
 .search-inner {
   background: #151515;
-  border: 1px solid #444;
+  border-color: #444;
 }
 
 .search-inner:focus-within {
   border-color: #e52b2f;
-  box-shadow: 0 0 0 3px rgba(229, 43, 47, 0.15);
+  box-shadow: 0 0 0 3px rgba(229,43,47,.15);
 }
 
 .search-inner input {
-  color: #ffffff;
+  color: #fff;
 }
 
 .search-inner input::placeholder {
@@ -870,321 +858,24 @@ nav a:hover {
   color: #e52b2f;
 }
 
-
-/* HERO */
-
-.hero {
-  background: #0d0d0d;
+.search-clear {
+  background: #333;
+  color: #fff;
 }
 
-.hero-copy > p:not(.eyebrow) {
-  color: #a6a6a6;
-}
-
-.eyebrow {
-  color: #e52b2f;
-}
-
-h1,
-h2,
-h3 {
-  color: #ffffff;
-}
-
-h1 em,
-h2 em {
-  color: #e52b2f;
-}
-
-
-/* BUTTONS */
-
-.btn {
-  border-color: #e52b2f;
-}
-
-.btn.dark {
+.search-clear:hover {
   background: #e52b2f;
-  border-color: #e52b2f;
-  color: #ffffff;
 }
 
-.btn.light {
-  background: transparent;
-  border-color: #ffffff;
-  color: #ffffff;
+.search-status {
+  color: #888;
 }
-
-.btn.light:hover {
-  background: #ffffff;
-  color: #080808;
-}
-
-
-/* INTRO STRIP */
-
-.intro-strip {
-  background: #e52b2f;
-  border-color: #e52b2f;
-}
-
-
-/* SECTIONS */
-
-.section {
-  background: #0d0d0d;
-}
-
-.section-head > p {
-  color: #a6a6a6;
-}
-
-
-/* CATEGORY BUTTONS */
-
-.category-tabs {
-  background: #0d0d0d;
-  border-bottom: 1px solid #292929;
-}
-
-.category-tabs button {
-  background: #151515;
-  border: 1px solid #383838;
-  color: #ffffff;
-}
-
-.category-tabs button:hover,
-.category-tabs button.active {
-  background: #e52b2f;
-  border-color: #e52b2f;
-  color: #ffffff;
-}
-
-
-/* PRODUCTS */
-
-.products {
-  background: #0d0d0d;
-}
-
-.product {
-  background: #151515;
-  border: 1px solid #303030;
-}
-
-.product:hover {
-  box-shadow: 8px 8px 0 #e52b2f;
-}
-
-.comic-image {
-  background: #111111;
-  color: #ffffff;
-  border: 2px solid #292929;
-}
-
-.poster-image {
-  background: #171717;
-  color: #ffffff;
-}
-
-.product-info h3 {
-  color: #ffffff;
-}
-
-.product-info p {
-  color: #999999;
-}
-
-.price {
-  color: #e52b2f;
-}
-
-.add {
-  background: #e52b2f;
-  border-color: #e52b2f;
-  color: #ffffff;
-}
-
-.add:hover {
-  background: #ff3b40;
-}
-
-
-/* NEW ARRIVALS */
-
-.arrivals {
-  background: #111111;
-}
-
-.arrivals-empty {
-  background: #151515;
-  border-color: #444;
-  color: #999;
-}
-
-
-/* FEATURE */
-
-.feature {
-  background: #050505;
-}
-
-.vault-box {
-  border-color: #ffffff;
-  box-shadow: 18px 18px 0 #e52b2f;
-}
-
-
-/* ABOUT */
-
-.about {
-  background: #0d0d0d;
-}
-
-.about > p:last-child {
-  color: #999999;
-}
-
-
-/* FOOTER */
-
-footer {
-  background: #050505;
-  border-top: 2px solid #e52b2f;
-}
-
-footer p {
-  color: #888888;
-}
-
-
-/* CART */
-
-.cart-panel {
-  background: #111111;
-  color: #ffffff;
-}
-
-.cart-top {
-  border-color: #292929;
-}
-
-.cart-bottom {
-  border-color: #292929;
-}
-
-.cart-item {
-  border-color: #292929;
-}
-
-.cart-item h4 {
-  color: #ffffff;
-}
-
-.cart-item button {
-  color: #e52b2f;
-}
-
-.tiny,
-.empty {
-  color: #888888;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .header {
-    min-height: 95px;
-  }
-
-  .header-inner {
-    min-height: 95px;
-    padding: 8px 15px;
-  }
-
-  .logo img {
-    width: 150px;
-  }
-}
-
-.product-image {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #151515;
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.comic-image:not(:has(img)) {
-  background: #0d0d0e;
-  color: #ffffff;
-}
-
-.logo {
-  display:flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0;
-}
-
-.logo img {
-  width: 140px;
-  height: auto;
-  display: block;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0;
-}
-
-.header {
-  min-height: 170px;
-  height: auto;
-  overflow: visible;
-}
-
-.header-inner {
-  min-height: 120px;
-  padding: 10px 24px;
-  overflow: visible;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  overflow: visible;
-}
-
-.logo img {
-  width: 220px;
-  height: auto;
-  display: block;
-}
-
-/* =========================================================
-   HERO COMIC BACKGROUND
-   ========================================================= */
 
 .hero {
   position: relative;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
-    url("hero-comics.png");
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
+    url("images/hero-comics.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1195,156 +886,381 @@ footer p {
   z-index: 1;
 }
 
-.hero {
-    position: relative !important;
-    background-image: url("images/hero-comics.png") !important;
-    background-size: 100% 100% !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-.display-poster {
-  background:
-    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)),
-    linear-gradient(135deg, #263f4d, #111);
-  border: 3px solid #fff;
-}
-
-.display-poster strong {
-  font-size: 2.7rem;
-  line-height: .82;
-  text-transform: uppercase;
-}
-
-.display-comic {
-  background:
-    radial-gradient(circle at 30% 20%, #fff176 0 3%, transparent 4%),
-    #e52b2f;
-  border: 3px solid #fff;
-}
-
-.display-comic strong {
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 5px 5px 0 #080808;
-}
-
-.display-comic span {
+h1,
+h2,
+h3 {
   color: #fff;
 }
 
-.display-comic {
-  padding: 5px;
+h1 em,
+h2 em {
+  color: #e52b2f;
 }
 
-.display-comic img {
+
+
+
+.btn {
+  border-color: #e52b2f;
+}
+
+.btn.dark {
+  background: #e52b2f;
+  border-color: #e52b2f;
+  color: #fff;
+}
+
+.btn.light {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn.light:hover {
+  background: #fff;
+  color: #080808;
+}
+
+
+
+
+.intro-strip {
+  background: #e52b2f;
+  border-color: #e52b2f;
+}
+
+
+
+
+.section {
+  background: #0d0d0d;
+}
+
+.section-head > p {
+  color: #a6a6a6;
+}
+
+
+
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  position: sticky;
+  top: 170px;
+  z-index: 5;
+
+  background: #0d0d0d;
+  padding: 10px 8vw;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.category-tabs button {
+  background: #151515;
+  border-color: #383838;
+  color: #fff;
+}
+
+.category-tabs button:hover,
+.category-tabs button.active {
+  background: #e52b2f;
+  border-color: #e52b2f;
+  color: #fff;
+}
+
+
+
+
+.products {
+  background: #0d0d0d;
+}
+
+.product {
+  background: #151515;
+  border-color: #303030;
+}
+
+.product:hover {
+  box-shadow: 8px 8px 0 #e52b2f;
+}
+
+.product-image {
   width: 100%;
-  height: 285px;
-  object-fit: contain;
-  display: block;
+  height: 290px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #151515;
 }
 
-.display-comic {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  height: auto !important;
-}
-
-.display-comic img {
-  width: 215px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  border: 4px solid #fff;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
-}
-
-.display-poster {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  height: 390px;
-  width: 270px;
-}
-
-.display-poster img {
+.product-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
-  border: 4px solid #fff;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.164);
 }
 
-.display-poster small,
-.display-poster span {
-  display: none;
+.comic-image {
+  background: #111;
+  color: #fff;
+  border: 2px solid #292929;
 }
 
-.display-poster img,
-.display-comic img {
-  filter: drop-shadow(8px 8px 8px rgba(255, 253, 253, 0.582));
+.poster-image {
+  background: #171717;
+  color: #fff;
 }
 
-/* VISIBLE HERO COVER SHADOWS */
+.product-info h3 {
+  color: #fff;
+}
 
-.display-poster img,
-.display-comic img {
-  position: relative;
-  z-index: 10;
-  border: 4px solid #ffffff !important;
-  box-shadow: 18px 18px 0 #e52b2f !important;
+.product-info p {
+  color: #999;
+}
+
+.price {
+  color: #e52b2f;
+}
+
+.add {
+  background: #e52b2f;
+  border-color: #e52b2f;
+  color: #fff;
+}
+
+.add:hover {
+  background: #ff3b40;
+}
+
+
+
+
+.arrivals {
+  background: #111;
+}
+
+.arrivals-empty {
+  background: #151515;
+  border-color: #444;
+  color: #999;
+}
+
+
+
+
+.feature {
+  background: #050505;
+}
+
+
+
+
+
+
+
+
+
+.about {
+  background: #0d0d0d;
+}
+
+.about > p:last-child {
+  color: #999;
+}
+
+
+
+
+footer {
+  background: #050505;
+  border-top: 2px solid #e52b2f;
+}
+
+footer p {
+  color: #888;
+}
+
+
+
+
+.cart-panel {
+  background: #111;
+  color: #fff;
+}
+
+.cart-top,
+.cart-bottom,
+.cart-item {
+  border-color: #292929;
+}
+
+.cart-item h4 {
+  color: #fff;
+}
+
+.cart-item button {
+  color: #e52b2f;
+}
+
+.tiny,
+.empty {
+  color: #888;
 }
 
 /* =========================================================
-   SELL TO US PAGE
+   UNIVERSAL PAGE HERO
+========================================================= */
+
+.page-hero-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+}
+
+.page-hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  padding: 75px 8vw;
+  display: flex;
+  align-items: center;
+  background-color: #0d0d0d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.5), rgba(0,0,0,.72));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-hero .section-head {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-hero .section-head > * {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero .section-head h1,
+.page-hero .section-head h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: .95;
+}
+
+.page-hero .section-head > p {
+  color: #aaa;
+  max-width: 420px;
+}
+
+.comics-hero {
+  background-image: url("images/comics.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.posters-hero {
+  background-image: url("images/posters.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.new-arrivals-hero {
+  background-image: url("images/new-arrivals.png");
+}
+
+.sell-hero {
+  background-image: url("images/sell-to-us.png");
+}
+
+.about-hero {
+  background-image: url("images/about-us.png");
+}
+
+/* =========================================================
+   SELL TO US
 ========================================================= */
 
 .sell-hero {
   min-height: 560px;
-  padding: 100px 8vw;
-  background:
-    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
-    url("images/hero-comics.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
+  padding: 80px 8vw;
+}
+
+.sell-hero-top {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
   align-items: center;
 }
 
-.sell-hero h1 {
-  max-width: 900px;
+.sell-hero-main h1,
+.sell-hero-buy h2,
+.sell-process h2,
+.sell-contact h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: .95;
 }
 
-.sell-intro {
+.sell-intro,
+.sell-hero-buy > p:last-child {
   max-width: 600px;
-  margin: 30px 0;
+  margin: 25px 0;
   color: #aaa;
-  font-size: 1.05rem;
-}
 
-.sell-section {
-  padding: 100px 8vw;
-  background: #0d0d0d;
+
+
+
 }
 
 .sell-grid {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 55px auto 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 
 .sell-card {
-  background: #151515;
+  background: rgba(21,21,21,.95);
   border: 1px solid #303030;
   padding: 30px;
   min-height: 240px;
 }
 
-.sell-card span {
+.sell-card span,
+.process-grid strong {
   color: #e52b2f;
   font-weight: 800;
   font-size: .7rem;
@@ -1355,9 +1271,10 @@ footer p {
   font-size: 1.5rem;
 }
 
-.sell-card p {
+.sell-card p,
+.process-grid p {
   color: #999;
-  font-size: .85rem;
+
 }
 
 .sell-process {
@@ -1367,7 +1284,7 @@ footer p {
 }
 
 .sell-process h2 {
-  font-size: clamp(3rem, 6vw, 6rem);
+
   margin: 20px 0 60px;
 }
 
@@ -1380,31 +1297,30 @@ footer p {
 .process-grid > div {
   border-top: 2px solid #e52b2f;
   padding-top: 20px;
-}
 
-.process-grid strong {
-  color: #e52b2f;
-  font-size: .7rem;
+
+
+
+
 }
 
 .process-grid h3 {
-  margin: 20px 0 10px;
-}
 
-.process-grid p {
-  color: #999;
-  max-width: 350px;
+  margin: 20px 0 10px;
+
+
+
+
 }
 
 .sell-contact {
   padding: 100px 8vw;
   background: #e52b2f;
   color: #fff;
-}
 
-.sell-contact h2 {
-  font-size: clamp(3rem, 6vw, 6rem);
-  margin: 20px 0;
+
+
+
 }
 
 .sell-contact .eyebrow {
@@ -1443,61 +1359,21 @@ footer p {
   margin-bottom: 7px;
 }
 
-@media (max-width: 850px) {
 
-  .sell-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .sell-hero,
-  .sell-section,
-  .sell-process,
-  .sell-contact {
-    padding: 70px 6vw;
-  }
-
-  .sell-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-box {
-    padding: 25px;
-  }
-
-}
 
 /* =========================================================
-   ABOUT PAGE
+   ABOUT
 ========================================================= */
 
 .about-page {
-  min-height: calc(100vh - 170px);
-  padding: 110px 8vw;
-  background:
-    linear-gradient(rgba(0,0,0,.86), rgba(0,0,0,.86)),
-    url("images/hero-comics.png");
-  background-size: cover;
-  background-position: center;
+  background: #0d0d0d;
   color: #fff;
 }
 
 .about-page-inner {
   max-width: 1000px;
   margin: 0 auto;
-}
-
-.about-page h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.95;
-  margin: 20px 0 45px;
+  padding: 90px 8vw;
 }
 
 .about-copy {
@@ -1531,116 +1407,93 @@ footer p {
   margin-top: 10px;
 }
 
-@media (max-width: 700px) {
 
-  .about-page {
+
+/* =========================================================
+   RESPONSIVE PAGE HEROES
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .header {
+    min-height: 120px;
+  }
+
+  .logo img {
+    width: 170px;
+  }
+
+  .page-hero {
+    min-height: 360px;
+    padding: 60px 6vw;
+  }
+
+  .page-hero .section-head {
+    display: block;
+  }
+
+  .page-hero .section-head > p {
+    margin-top: 20px;
+  }
+
+  .page-hero .section-head h1,
+  .page-hero .section-head h2 {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .sell-hero-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sell-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-tabs {
+    top: 120px;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .header {
+    min-height: 95px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .page-hero {
+    min-height: 300px;
+    padding: 50px 6vw;
+  }
+
+  .page-hero .section-head h1,
+  .page-hero .section-head h2 {
+    font-size: 3rem;
+  }
+
+  .sell-hero,
+  .sell-process,
+  .sell-contact {
     padding: 70px 6vw;
   }
 
-  .about-statement {
+  .sell-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
     padding: 25px;
   }
 
-}
-
-/* CONSISTENT MAIN PAGE HEADINGS */
-
-.section-head h1,
-.section-head h2,
-.about-page h1,
-.sell-hero h1,
-.sell-process h2,
-.sell-contact h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 0.95;
-}
-
-/* =========================================================
-   PAGE BACKGROUND IMAGES
-========================================================= */
-
-.page-background {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
-
-/* Dark overlay */
-.page-background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.78);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Keep page content above the background */
-.page-background > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* COMICS */
-.comics-page {
-  background-image: url("images/comics.png");
-}
-
-
-/* POSTERS */
-.posters-page {
-  background-image: url("images/posters.png");
-}
-
-
-/* NEW ARRIVALS */
-.new-arrivals-page {
-  background-image: url("images/new-arrivals.png");
-}
-
-
-/* SELL TO US */
-.sell-page {
-  background-image: url("images/sell-to-us.png");
-}
-
-
-/* ABOUT */
-.about-page-background {
-  background-image: url("images/about-us.png");
-}
-
-/* =========================================================
-   PAGE BACKGROUND IMAGES
-========================================================= */
-
-.page-background {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #0d0d0d;
-}
-
-.page-background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.page-background > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* COMICS */
-.comics-page {
-  background-image: url("images/comics.png");
+  .category-tabs {
+    top: 95px;
+  }
 }
