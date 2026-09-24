@@ -1,6 +1,6 @@
 const products = [
-  {id:1,type:"comic",category:"Marvel",name:"The Amazing Spider-Man #61",meta:"Marvel / 2021 / Condition TBC",price:4.00,image:"images/amazing-spider-man-61.jpg"},
-  {id:2,type:"comic",category:"Marvel",name:"The Amazing Spider-Man #84",meta:"Marvel / 2022 / Condition TBC",price:1.50,image:"images/amazing-spider-man-84.jpg"},
+  {id:1,type:"comic",category:"Marvel",name:"Marvel Retro Classic #001",meta:"Marvel / 1980s / Very Good",price:9.99},
+  {id:2,type:"comic",category:"DC",name:"Comic Find #002",meta:"DC / Year TBC / Condition TBC",price:12.99},
   {id:3,type:"comic",category:"2000AD",name:"Comic Find #003",meta:"2000 AD / Year TBC / Condition TBC",price:7.99},
   {id:4,type:"comic",category:"British",name:"Comic Find #004",meta:"British Comics / Year TBC / Condition TBC",price:9.99},
   {id:5,type:"comic",category:"Indie",name:"Comic Find #005",meta:"Indie / Year TBC / Condition TBC",price:7.99},
@@ -21,8 +21,8 @@ function card(p) {
   const label = p.type === "comic" ? "COMIC" : "POSTER";
   const cls = p.type === "comic" ? "comic-image" : "poster-image";
 
-  const image = p.image
-    ? `<img src="${p.image}" alt="${p.name}">`
+  const image = p.id === 1
+    ? `<img src="images/wolf-comic.png" alt="${p.name}">`
     : `${label}<br>#${String(p.id).padStart(3, "0")}`;
 
   return `
@@ -194,6 +194,73 @@ function renderCart() {
     cart.reduce((sum, p) => sum + p.price, 0).toFixed(2);
 }
 
+
+function renderProductPage() {
+  const target = document.getElementById("productPage");
+  if (!target) return;
+
+  const id = Number(new URLSearchParams(window.location.search).get("id"));
+  const product = products.find(item => item.id === id);
+
+  if (!product) {
+    target.innerHTML = `
+      <div class="product-not-found">
+        <h1>Product not found</h1>
+        <p>Sorry, we couldn't find that item.</p>
+        <a href="comics.html">Back to Comics</a>
+      </div>
+    `;
+    return;
+  }
+
+  const image = product.image
+    ? `<img src="${product.image}" alt="${product.name}">`
+    : `<div class="product-photo-placeholder">COMIC<br>PHOTO</div>`;
+
+  target.innerHTML = `
+    <div class="product-detail">
+      <div class="product-detail-image">
+        ${image}
+      </div>
+
+      <div class="product-detail-info">
+        <p class="eyebrow">${product.category}</p>
+        <h1>${product.name}</h1>
+        <p class="product-detail-meta">${product.publisher || product.category} · ${product.year || "Year TBC"} · Issue ${product.issue || "TBC"}</p>
+
+        <div class="product-detail-price">£${product.price.toFixed(2)}</div>
+
+        <button class="product-detail-button" onclick="addToCart(${product.id})">
+          ADD TO BAG
+        </button>
+
+        <div class="detail-section">
+          <h2>DETAILS</h2>
+          <p><strong>Publisher:</strong> ${product.publisher || "TBC"}</p>
+          <p><strong>Year:</strong> ${product.year || "TBC"}</p>
+          <p><strong>Issue:</strong> ${product.issue || "TBC"}</p>
+          <p><strong>Creators:</strong> ${product.creators || "TBC"}</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>CONDITION</h2>
+          <p>${product.condition || "Condition to be confirmed. Please see the photographs."}</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>DESCRIPTION</h2>
+          <p>${product.description || "Please see the photographs for the actual item."}</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>DELIVERY</h2>
+          <p>UK delivery information will be shown here once delivery rates are finalised.</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 // PAGE SETUP
 
 if (document.getElementById("comicProducts")) {
@@ -206,6 +273,10 @@ if (document.getElementById("posterProducts")) {
 
 if (document.getElementById("newArrivalProducts")) {
   renderNewArrivals();
+}
+
+if (document.getElementById("productPage")) {
+  renderProductPage();
 }
 
 setupCategoryTabs();

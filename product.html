@@ -1,73 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Product | Comic Reel & Retro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comic Reel & Retro product listing.">
+  <title>Comic Reel & Retro | Product</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="product.css">
+
+  <style>
+    .product-detail-page {
+      min-height: 100vh;
+      padding: 190px 6vw 80px;
+      background: #0d0d0d;
+    }
+
+    .product-detail {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(360px, 520px) 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .product-detail-image {
+      background: #17181c;
+      border: 1px solid #333;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      box-sizing: border-box;
+    }
+
+    .product-detail-image img {
+      display: block;
+      max-width: 100%;
+      max-height: 700px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .product-photo-placeholder {
+      width: 100%;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #292c32;
+      color: white;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .product-detail-info h1 {
+      margin: 0 0 14px;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: .95;
+      color: #fff;
+    }
+
+    .product-detail-meta {
+      color: #9fa4ad;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .product-detail-price {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    .product-detail-button {
+      border: 0;
+      background: #df4035;
+      color: #fff;
+      font-weight: 800;
+      padding: 16px 34px;
+      cursor: pointer;
+      margin-bottom: 38px;
+    }
+
+    .product-detail-button:hover {
+      filter: brightness(1.08);
+    }
+
+    .detail-section {
+      border-top: 1px solid #303030;
+      padding: 24px 0;
+    }
+
+    .detail-section h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .detail-section p {
+      margin: 6px 0;
+      color: #aeb2ba;
+      line-height: 1.6;
+    }
+
+    .detail-section strong {
+      color: #fff;
+    }
+
+    .product-not-found {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #fff;
+      padding-top: 60px;
+    }
+
+    .product-not-found a {
+      color: #fff;
+    }
+
+    @media (max-width: 850px) {
+      .product-detail-page {
+        padding: 150px 20px 50px;
+      }
+
+      .product-detail {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .product-detail-image {
+        min-height: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="header">
-  <a class="logo" href="index.html">COMIC REEL <span>&</span> RETRO</a>
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Comic Reel & Retro">
+  </a>
+
   <nav>
-    <a href="index.html#comics">Comics</a>
-    <a href="index.html#posters">Posters</a>
-    <a href="index.html#new-arrivals">New Arrivals</a>
+    <a href="index.html">Home</a>
+    <a href="comics.html">Comics</a>
+    <a href="posters.html">Posters</a>
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="sell-to-us.html">Sell To Us</a>
+    <a href="about.html">About</a>
   </nav>
-  <button class="cart-button" id="cartButton">Bag <span id="cartCount">0</span></button>
+
+  <button class="cart-button" id="cartButton">
+    Bag <span id="cartCount">0</span>
+  </button>
 </header>
 
-<main class="product-page">
-  <a class="back-link" id="backLink" href="index.html">← Back to shop</a>
-
-  <section class="product-detail" id="productDetail">
-    <div class="detail-image-wrap">
-      <div class="detail-image" id="productImage">PRODUCT</div>
-    </div>
-
-    <div class="detail-copy">
-      <p class="eyebrow" id="productCategory">PRODUCT</p>
-      <h1 id="productName">Loading...</h1>
-      <p class="detail-meta" id="productMeta"></p>
-      <div class="detail-price" id="productPrice">£—</div>
-
-      <button class="btn dark add-product" id="addProduct">ADD TO BAG</button>
-
-      <div class="detail-section">
-        <h2>CONDITION</h2>
-        <p id="productCondition">Condition details will be added when the real stock is photographed.</p>
-      </div>
-
-      <div class="detail-section">
-        <h2>DESCRIPTION</h2>
-        <p id="productDescription">Full product information will be added when this item is ready for sale.</p>
-      </div>
-
-      <div class="detail-section">
-        <h2>DELIVERY</h2>
-        <p>UK delivery information will be shown here once the shop's delivery rates are finalised.</p>
-      </div>
-    </div>
-  </section>
+<main class="product-detail-page">
+  <section id="productPage"></section>
 </main>
+
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-top">
+    <h3>Your bag</h3>
+    <button id="closeCart">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-bottom">
+    <div>
+      <span>Total</span>
+      <strong id="cartTotal">£0.00</strong>
+    </div>
+    <button class="btn dark" id="checkout">Checkout</button>
+    <p class="tiny">Checkout will be connected to your chosen payment platform later.</p>
+  </div>
+</div>
 
 <div class="overlay" id="overlay"></div>
 
-<aside class="cart-panel" id="cartPanel">
-  <div class="cart-top">
-    <h3>Your Bag</h3>
-    <button id="closeCart" aria-label="Close bag">×</button>
-  </div>
-  <div id="cartItems"></div>
-  <div class="cart-bottom">
-    <div><span>Total</span><strong id="cartTotal">£0.00</strong></div>
-    <button class="btn dark" id="checkout">CHECKOUT</button>
-    <p class="tiny">Checkout will be connected when the payment platform is chosen.</p>
-  </div>
-</aside>
+<footer>
+  <div class="logo">COMIC <span>REEL</span> & RETRO</div>
+  <p>Posters • Comics • Pop Culture</p>
+  <p>hello@comicreelretro.co.uk</p>
+</footer>
 
-<script src="product.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
